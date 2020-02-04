@@ -6,4 +6,9 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: test1
+      - name: test1
+        run: echo test1
    
