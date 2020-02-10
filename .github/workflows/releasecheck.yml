@@ -1,5 +1,8 @@
 name: releasecheck
-on: [release]
+on: 
+  release:
+    types:
+      - created
   
 jobs:
   releasecheck:
