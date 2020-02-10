@@ -12,3 +12,10 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: echo var
+        run: |
+          echo version name is: ${{ github.tag_name }}
+          echo release title is: ${{ github.name }}
+          echo release body is: ${{ github.body }}
+          echo repository is: ${{ github.repository }}
+          
