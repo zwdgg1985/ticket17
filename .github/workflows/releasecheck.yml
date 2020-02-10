@@ -18,4 +18,17 @@ jobs:
           echo release title is: ${{ github.event.release.name }}
           echo release body is: ${{ github.event.release.body }}
           echo repository is: ${{ github.repository }}
-          
+      - name: Send dingding notify
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TOKEN }}
+          body: |
+            {
+              "msgtype": "link",
+              "link": {
+                  "text": ${{ github.event.release.body }}
+                  "title": ${{ github.event.release.name }}
+                  "picUrl": "",
+                  "messageUrl": "https://www.dingtalk.com/s?__biz=MzA4NjMwMTA2Ng==&mid=2650316842&idx=1&sn=60da3ea2b29f1dcc43a7c8e4a7c97a16&scene=2&srcid=09189AnRJEdIiWVaKltFzNTw&from=timeline&isappinstalled=0&key=&ascene=2&uin=&devicetype=android-23&version=26031933&nettype=WIFI"
+              }
+            }
