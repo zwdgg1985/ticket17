@@ -1,8 +1,5 @@
 name: releasecheck
-on: 
-  release:
-    types:
-      - created
+on: [release]
   
 jobs:
   releasecheck:
@@ -14,8 +11,8 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: echo var
         run: |
-          echo version name is: ${{ github.tag_name }}
-          echo release title is: ${{ github.name }}
-          echo release body is: ${{ github.body }}
+          echo version name is: ${{ github.event.release.tag_name }}
+          echo release title is: ${{ github.event.release.name }}
+          echo release body is: ${{ github.event.release.body }}
           echo repository is: ${{ github.repository }}
           
