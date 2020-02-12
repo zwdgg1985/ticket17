@@ -1,7 +1,16 @@
 name: branchtag
-on: 
-  create:
+
+on:
+  push:
+    branches-ignore:
+      - '*'
     tags:
+      - 'v-*'
+  create:
+    branches-ignore:
+      - '*'
+    tags:
+      - 'v-*'
   
 jobs:
   branchtag:
