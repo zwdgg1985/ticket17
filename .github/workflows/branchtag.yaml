@@ -5,12 +5,8 @@ on:
     branches-ignore:
       - '*'
     tags:
-      - 'v-*'
-  create:
-    branches-ignore:
-      - '*'
-    tags:
-      - 'v-*'
+      - 'v*'
+
   
 jobs:
   branchtag:
