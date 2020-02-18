@@ -5,7 +5,8 @@ on:
     types: [created, edited, deleted]
     
 jobs:
-  prcheck:
+ job01:
+    if: contains(github.event.comment.html_url, '/pull/')
     runs-on: [ubuntu-latest]
     steps:
       - name: Dump GitHub context
