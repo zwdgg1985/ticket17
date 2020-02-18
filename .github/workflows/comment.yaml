@@ -1,0 +1,14 @@
+name: commentcheck
+on:
+  push:
+  issue_comment:
+    types: [created, edited, deleted]
+    
+jobs:
+  prcheck:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
