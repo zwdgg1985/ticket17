@@ -1,1 +1,9 @@
-
+name: pushevent
+on: [push]
+jobs:
+  pushevent:
+    runs-on: [ubuntu-latest]
+    steps:
+        - name: test
+          run: |
+            echo push test  
