@@ -4,6 +4,7 @@ jobs:
   pushevent:
     runs-on: [ubuntu-latest]
     steps:
-        - name: test
-          run: |
-            echo push test  
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
