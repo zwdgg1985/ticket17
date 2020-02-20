@@ -13,4 +13,4 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: create release
         run: |
-          curl -v -X POST -u ${{ secrets.PAT }} -H "Accept: application/application/vnd.github.antiope-preview+json" --data '{"tag_name": "v2.4", "target_commitish": "master", "name": "v2.4"}' https://api.github.com/repos/weide-zhou/ticket17/releases
+          curl -v -X POST -u ${{ secrets.PAT }} -H "Accept: application/vnd.github.antiope-preview+json" --data '{"tag_name": "v2.4", "target_commitish": "master", "name": "v2.4"}' https://api.github.com/repos/weide-zhou/ticket17/releases
