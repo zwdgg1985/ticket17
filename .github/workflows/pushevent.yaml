@@ -1,5 +1,8 @@
 name: pushevent
-on: [push]
+on: 
+  push:
+    branches: 
+      - master
 jobs:
   pushevent:
     runs-on: [ubuntu-latest]
