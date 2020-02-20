@@ -11,3 +11,9 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: create release
+        run: |
+          curl POST -H "Authorization: token ${{ secrets.PAT }}" \
+          -H "Accept: application/application/vnd.github.antiope-preview+json"  \
+          https://api.github.com/repos/weide-zhou/ticket17/releases \
+          --data '{"tag_name": "v2.4", "target_commitish": "master", "name": "v2.4"}'
