@@ -12,3 +12,6 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: get pullrequest url
+        run: |
+          echo ${{ event.issue.pull_request.url }}
