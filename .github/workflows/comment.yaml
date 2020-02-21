@@ -14,4 +14,4 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: get pullrequest url
         run: |
-          echo ${{ event.issue.pull_request.url }}
+          echo ${{ github.event.issue.pull_request.url }}
