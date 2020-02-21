@@ -22,3 +22,7 @@ jobs:
       - name: echo upstream repo
         run: |
           echo ${{ steps.upstreamrepo.outputs.reponame }}
+      - name: Checkout upstream repo
+        uses: actions/checkout@v2
+        with:
+           ref: ${{ steps.upstreamrepo.outputs.reponame }}
