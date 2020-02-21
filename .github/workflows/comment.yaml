@@ -17,4 +17,4 @@ jobs:
           echo ${{ github.event.issue.pull_request.url }}
       - name: get upstream repo
         run: |
-          curl -v -H "Accept: application/vnd.github.sailor-v-preview+json" -u ${{ secrets.PAT }} ${{ github.event.issue.pull_request.url }}
+          curl -v -H "Accept: application/vnd.github.sailor-v-preview+json" -u ${{ secrets.PAT }} ${{ github.event.issue.pull_request.url }} | jq 'head.ref'
